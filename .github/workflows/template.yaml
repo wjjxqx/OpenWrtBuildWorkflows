@@ -12,23 +12,23 @@
 # copyright information.
 #-------------------------------------------------------------------------------------------------------
 
-Workflow name which is showed in GitHub Actions.
-name: x86
+# Workflow name which is showed in GitHub Actions.
+name: Build LEDE for x86_64
 
 on:
   workflow_dispatch:
     inputs:
       force-build:
         description: "Build new firmware anyway"
-        required: true
-        default: "true"
+        required: false
+        default: "false"
       ssh:
         description: "SSH connection to Actions"
         required: false
         default: "false"
 # Uncomment the following to run regularly. Note that the cron expression here does not contain seconds.
- schedule:
-    - cron: 0 */19 * * *
+#  schedule:
+#    - cron: 0 */18 * * *
 
 env:
   # REPO means the OpenWrt repo you want to build from in this workflow. 
@@ -60,8 +60,8 @@ env:
   # STORE_FIRMWARE determine whether to upload firmwares to workflow artifacts.
   STORE_FIRMWARE: true
   # The following are options of where the firmware needs to be transfered. 
-  COWTRANSFER_FIRMWARE: true
-  WETRANSFER_FIRMWARE: true
+  COWTRANSFER_FIRMWARE: false
+  WETRANSFER_FIRMWARE: false
   RELEASE_FIRMWARE: true
   # Change the following to your time zone.
   TIME_ZONE: Asia/Shanghai
