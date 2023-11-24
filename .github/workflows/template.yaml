@@ -12,7 +12,7 @@
 # copyright information.
 #-------------------------------------------------------------------------------------------------------
 
-# Workflow name which is showed in GitHub Actions.
+Workflow name which is showed in GitHub Actions.
 name: Build LEDE for x86_64
 
 on:
