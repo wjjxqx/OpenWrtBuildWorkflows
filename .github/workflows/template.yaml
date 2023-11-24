@@ -13,7 +13,7 @@
 #-------------------------------------------------------------------------------------------------------
 
 Workflow name which is showed in GitHub Actions.
-name: Build LEDE for x86_64
+name: x86
 
 on:
   workflow_dispatch:
