@@ -77,7 +77,8 @@ jobs:
       - name: Get Commit Hash
         id: get-hash
         run: |
-          git clone --depth 1 --branch $REPO_BRANCH --single-branch $REPO_URL ./
+          git clone --depth 1 --branch $REPO_BRANCH --single-branch $REPO_URL /tmp/openwrt-check
+          cd /tmp/openwrt-check
           echo "commit-hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
 
       - name: Compare Commit Hash
