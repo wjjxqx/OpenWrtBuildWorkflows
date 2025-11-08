@@ -28,7 +28,7 @@ on:
         default: "false"
 # Uncomment the following to run regularly. Note that the cron expression here does not contain seconds.
 #  schedule:
-#    - cron: 0 */18 * * *
+    - cron: 0 */18 * * *
 
 env:
   # REPO means the OpenWrt repo you want to build from in this workflow. 
@@ -317,3 +317,4 @@ jobs:
           delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
