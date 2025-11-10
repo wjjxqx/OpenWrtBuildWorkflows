@@ -20,14 +20,14 @@ on:
     inputs:
       force-build:
         description: "Build new firmware anyway"
-        required: false
+        required: true
         default: "false"
       ssh:
         description: "SSH connection to Actions"
         required: false
         default: "false"
 # Uncomment the following to run regularly. Note that the cron expression here does not contain seconds.
-#  schedule:
+  schedule:
     - cron: 0 */18 * * *
 
 env:
@@ -317,4 +317,5 @@ jobs:
           delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
